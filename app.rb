@@ -8,8 +8,10 @@ class App < Sinatra::Base
     erb :create_puppy
   end
   post "/" do
-    x = Puppy.new
-  @result = x.initialize(params[:name,:breed,:age])
+  @name = params[:name]
+  @age = params[:age]
+  @breed = params[:breed]
+
     erb  :display_puppy
   end
 end
